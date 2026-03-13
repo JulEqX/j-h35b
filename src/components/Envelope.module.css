@@ -1,0 +1,72 @@
+.envelope-container {
+    --envelope-width: min(458px, 85vw);
+    --envelope-height: calc(var(--envelope-width) * 0.708);
+
+    position: relative;
+    width: var(--envelope-width);
+    max-width: var(--envelope-width);
+    height: var(--envelope-height);
+    max-height: var(--envelope-height);
+    background-color: #eeeeee;
+    box-shadow: 0 0 100px 10px #fee8fa;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 0;
+    transform-origin: top;
+    border-top: calc(var(--envelope-height) / 2) solid #e6dde4;
+    border-bottom: 0;
+    border-left: calc(var(--envelope-width) / 2) solid transparent;
+    border-right: calc(var(--envelope-width) / 2) solid transparent;
+    z-index: 1;
+}
+
+.envelope-pocket {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 0;
+    border-top: calc(var(--envelope-height) / 2) solid transparent;
+    border-bottom: calc(var(--envelope-height) / 2) solid #e6dde4;
+    border-left: calc(var(--envelope-width) / 2) solid #ffaeae;
+    border-right: calc(var(--envelope-width) / 2) solid #ffaeae;
+    z-index: 3;
+}
+
+.envelope-seal {
+    position: absolute;
+    width: min(250px, 27vw);
+    height: min(250px, 27vw);
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.envelope-letter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: calc(var(--envelope-height) * 0.926);
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #eee7d7;
+    box-shadow: inset 0 0 100px -20px BurlyWood;
+    border-radius: 10px;
+    z-index: 0;
+}
